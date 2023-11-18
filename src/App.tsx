@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import HelloWorld from './components/HelloWorld';
+import {Routes,Route} from 'react-router-dom'
+import Home from './components/pages/Home';
+import Cources from './components/pages/Cources';
+import Contact from './components/pages/Contact';
+import About from './components/pages/About';
+import CreateContact from './components/pages/CreateContact';
+// import HomeBody from './components/HomeBody';
+function App() { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <div>
+      
+     <Routes>
+      <Route path="/" Component={Home}/>
+      <Route path="/cources" Component={Cources}/>
+      <Route path="/about" Component={About}/> 
+      <Route path="/contact" Component={Contact}/> 
+      <Route path="/add-contacts" Component={CreateContact}/> 
+
+     </Routes>
+ 
+    {/* <CreateContact/> */}
+     </div>
+
   );
 }
 
